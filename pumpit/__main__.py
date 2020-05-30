@@ -7,7 +7,7 @@ import re
 @click.option("--tag", type=str)
 @click.option("--replace", nargs=2, type=str)
 def main(file, tag, replace):
-    match = re.match(r"v?(?P<a>\d+)(?P<b>\.\d+)(?P<c>\.\d+)?", tag)
+    match = re.search(r"v?(?P<a>\d+)(?P<b>\.\d+)(?P<c>\.\d+)?", tag)
 
     version = match.expand(r"\g<a>\g<b>\g<c>")
 
