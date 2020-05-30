@@ -17,9 +17,9 @@ def main(file, tag, replace):
         content = f.read()
 
     old = replace[0]
-    new = replace[1].replace(r"${VERSION}", version)
+    new = replace[1].replace(r"%VERSION%", version)
 
-    print(f"Replace '{old}' width '{new}'")
+    print(f"Replace '{old}' with '{new}'")
 
     content = content.replace(old, new)
 
