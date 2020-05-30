@@ -16,7 +16,12 @@ def main(file, tag, replace):
     with open(file, "r") as f:
         content = f.read()
 
-    content = content.replace(replace[0], replace[1].replace(r"${VERSION}", version))
+    old = replace[0]
+    new = replace[1].replace(r"${VERSION}", version)
+
+    print(f"Replace '{old}' width '{new}'")
+
+    content = content.replace(old, new)
 
     with open(file, "w") as f:
         f.write(content)
